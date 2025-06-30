@@ -23,7 +23,7 @@ const meta = {
         weight: 'normal',
         size: 'medium',
         text: 'Title'
-    }
+    },
 } satisfies Meta<typeof Button>;
 
 export default meta;

@@ -5,7 +5,8 @@ import { createStyleSheet } from "react-native-unistyles";
 export const styleSheet = createStyleSheet({
   /* ───────── BUTTON ───────── */
   button: {
-    padding: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
     borderRadius: 8,
 
     variants: {
