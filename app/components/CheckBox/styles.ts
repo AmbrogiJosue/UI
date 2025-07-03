@@ -1,4 +1,5 @@
 import theme from "@/app/const/theme";
+import { colorTypes } from "@/app/interfaces/types";
 import { createStyleSheet } from "react-native-unistyles";
 
 export const styleSheet = createStyleSheet({
@@ -86,7 +87,10 @@ export const styleSheet = createStyleSheet({
       return theme.sizes.large
     }
     return {}
-  }
+  },
+  color: (color: colorTypes) => ({
+    backgroundColor: theme.colors[color!]
+  })
   // compoundVariants: [
   //   {
   //     variant: "text",

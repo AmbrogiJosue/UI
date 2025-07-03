@@ -1,16 +1,18 @@
 const theme = {
     colors: {
         primary: '#2a8c4c',
-        secondary: '#89f096',
-        tertiary: '#7aebdc',
+        primaryAccent: '#d3f2de',
+        primaryDark: '#074a20',
+        secondary: '#609974',
+        tertiary: '#8a9c90',
         disabled: '#d3d3d3',
         'text-dark': '#000000',
         'text-light': '#ffffff'
     },
     sizes: {
-        small: 12,
-        medium: 16,
-        large: 20
+        small: 14,
+        medium: 18,
+        large: 22
     },
     font: {
         weight: {

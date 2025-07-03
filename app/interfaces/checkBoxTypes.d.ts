@@ -1,5 +1,5 @@
 
-type ColorTypes = 'primary' | 'secondary';
+type ColorTypes = 'primary' | 'secondary' | 'tertiary';
 
 type SizeTypes = 'small' | 'medium' | 'large';
 

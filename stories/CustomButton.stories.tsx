@@ -7,23 +7,23 @@ import { fn } from "storybook/test";
 import { action } from 'storybook/actions';
 
 const meta = {
-    title: 'Custom/Button',
-    component: Button,
-    tags: ['autodocs'],
-      decorators: [
-        (Story) => (
-          <View style={{ flex: 1, alignItems: 'center' }}>
-            <Story />
-          </View>
-        ),
-      ],
-    args: {
-        onPress: fn(),
-        disabled: false,
-        weight: 'normal',
-        size: 'medium',
-        text: 'Title'
-    },
+  title: 'Custom/Button',
+  component: Button,
+  tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <View style={{ flex: 1, alignItems: 'center' }}>
+        <Story />
+      </View>
+    ),
+  ],
+  args: {
+    onPress: fn(),
+    disabled: false,
+    weight: 'normal',
+    size: 'medium',
+    text: 'Title'
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -31,10 +31,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-        variant: 'filled',
-        color: 'primary',
-    }
+  args: {
+    variant: 'filled',
+    color: 'primary',
+  }
 }
 
 export const Outline: Story = {
@@ -44,7 +44,7 @@ export const Outline: Story = {
   }
 }
 
-export const Text: Story ={
+export const Text: Story = {
   args: {
     variant: 'text',
     color: 'primary'

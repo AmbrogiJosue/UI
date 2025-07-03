@@ -1,5 +1,7 @@
 // Create all types for the UI app
 
+import { ReactElement } from "react";
+
 export type VariantTypes = 'filled' | 'outline' | 'text';
 
 export type sizeTypes = 'small' | 'medium' | 'large';
@@ -14,7 +16,8 @@ interface ButtonProps {
     disabled?: boolean;
     variant?: VariantTypes;
     size?: sizeTypes;
-    color?: colorTypes;
+    color: colorTypes;
+    icon?: ReactElement;
 }
 
 export interface ButtonTextProps {
