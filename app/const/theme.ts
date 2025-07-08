@@ -6,6 +6,7 @@ const theme = {
         secondary: '#609974',
         tertiary: '#8a9c90',
         disabled: '#d3d3d3',
+        disabledDark: '#4f4f4f',
         'text-dark': '#000000',
         'text-light': '#ffffff'
     },

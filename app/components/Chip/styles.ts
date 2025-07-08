@@ -2,19 +2,24 @@ import theme from "@/app/const/theme";
 import { createStyleSheet } from "react-native-unistyles";
 
 export const styleSheet = createStyleSheet({
-    container: {
+    container: (variant: string) => ({
         borderRadius: 8,
         borderWidth: 2,
+        borderColor: theme.colors.disabled,
         variants: {
+            variant: {
+                outline: {
+                    backgroundColor: 'transparent',
+                },
+                filled: {
+                    backgroundColor: 'white'
+                }
+            },
             active: {
                 true: {
                     borderColor: theme.colors.primaryDark,
-                    backgroundColor: theme.colors.primaryAccent
+                    backgroundColor: variant === 'filled' ? theme.colors.primaryAccent : 'transparent'
                 },
-                false: {
-                    borderColor: theme.colors.disabled,
-                    backgroundColor: 'white',
-                }
             },
             size: {
                 small: {
@@ -22,18 +27,24 @@ export const styleSheet = createStyleSheet({
                     paddingVertical: 2
                 },
                 medium: {
-                    paddingHorizontal: 6,
+                    paddingHorizontal: 8,
                     paddingVertical: 4,
                 },
                 large: {
-                    paddingHorizontal: 8,
+                    paddingHorizontal: 12,
                     paddingVertical: 6
+                }
+            },
+            disabled: {
+                true: {
+                    opacity: 0.5
                 }
             },
 
         }
-    }, 
-    text: {
+    }),
+    text: (variant: string) => ({
+        color: theme.colors.disabled,
         variants: {
             size: {
                 small: {
@@ -48,16 +59,39 @@ export const styleSheet = createStyleSheet({
             },
             active: {
                 true: {
-                    color: theme.colors.primaryDark
+                    color: variant === 'filled' ? theme.colors.primaryDark : theme.colors.primaryAccent
                 },
-                false: {
-                    color: theme.colors.disabled,
+            },
+        }
+    }),
+    icon: {
+        color: theme.colors.disabled,
+        fontSize: 24,
+        variants: {
+            size: {
+                small: {
+                    fontSize: 18,
+                },
+                medium: {
+                    fontSize: 24,
+                },
+                large: {
+                    fontSize: 32
+                }
+            },
+            active: {
+                true: {
+                    color: theme.colors.primaryDark
                 }
             }
         }
     },
-    content :{
+    content: {
         alignItems: 'center',
-        justifyContent: 'center'
-    }
+        justifyContent: 'center',
+        gap: 2
+    },
+    pressed: {
+        opacity: 0.5
+    },
 })

@@ -27,7 +27,7 @@ const Button = ({
         onPress={onPress}
         style={[styles.button, styles.extraButtonStyle(variant, color, disabled)]}
       >
-        <ButtonText style={{color: 'white'}}/>
+        <ButtonText/>
       </TouchableOpacity>
     </ButtonProvider>
   );
