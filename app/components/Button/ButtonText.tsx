@@ -9,7 +9,7 @@ const ButtonText = () => {
     // Map unsupported weights to valid fontWeight values
     const { styles } = useStyles(styleSheet, { variant, weight, size });
     return (
-        <Text style={[styles.text, styles.extraTextStyle(variant!, color!, disabled!)]}>
+        <Text style={[styles.text, styles.extraTextStyle(variant, color, disabled)]}>
             {text}
         </Text>
     )

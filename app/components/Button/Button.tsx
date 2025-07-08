@@ -7,12 +7,13 @@ import { styleSheet } from "@/app/components/Button/styles";
 
 const Button = ({
   onPress,
-  text = "Button Text",
-  disabled = false,
-  variant = "filled",
-  color = "primary",
-  weight = "normal",
-  size = "medium",
+  text,
+  disabled,
+  variant,
+  color,
+  weight,
+  size,
+  icon 
 }: ButtonProps) => {
   // Apply styles from the unistyle stylesheet depending on the props
   const { styles } = useStyles(styleSheet, {
@@ -20,13 +21,13 @@ const Button = ({
     size,
   });
   return (
-    <ButtonProvider value={{ text, variant, weight, size, color, disabled}}>
+    <ButtonProvider value={{ text, variant, weight, size, color, disabled, icon}}>
       <TouchableOpacity
         disabled={disabled}
         onPress={onPress}
         style={[styles.button, styles.extraButtonStyle(variant, color, disabled)]}
       >
-        <ButtonText />
+        <ButtonText style={{color: 'white'}}/>
       </TouchableOpacity>
     </ButtonProvider>
   );
