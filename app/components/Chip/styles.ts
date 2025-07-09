@@ -6,13 +6,15 @@ export const styleSheet = createStyleSheet({
         borderRadius: 8,
         borderWidth: 2,
         borderColor: theme.colors.disabled,
+        alignItems: 'center',
+        justifyContent: 'center',
         variants: {
             variant: {
                 outline: {
                     backgroundColor: 'transparent',
                 },
                 filled: {
-                    backgroundColor: 'white'
+                    backgroundColor: '#ffffff'
                 }
             },
             active: {
@@ -86,12 +88,13 @@ export const styleSheet = createStyleSheet({
             }
         }
     },
-    content: {
+    content:(iconReversed: boolean) => ({
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 2
-    },
-    pressed: {
-        opacity: 0.5
-    },
+        gap: 2,
+        flexDirection: iconReversed ? 'row-reverse' : 'row'
+    }),
+    pressed: ( isPressed: boolean ) => ({
+        opacity: isPressed ? 0.5 : 1
+    }),
 })

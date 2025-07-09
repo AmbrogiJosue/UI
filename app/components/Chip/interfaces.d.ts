@@ -21,9 +21,10 @@ export interface ChipIconProps {
 }
 
 export interface ChipProps {
-    size: sizes;
-    active: boolean;
-    disabled: boolean;
+    size?: sizes;
+    active?: boolean;
+    disabled?: boolean;
     iconReversed?: boolean;
-    variant: variants;
+    variant?: variants;
+    onPress?: () => {};
 }

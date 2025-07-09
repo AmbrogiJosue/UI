@@ -1,9 +1,8 @@
-import { Pressable, View, Text } from 'react-native'
+import { Pressable, View } from 'react-native'
 import { ChipIconProps, ChipProps, ChipTextProps } from './interfaces'
 import { useStyles } from 'react-native-unistyles'
 import { styleSheet } from './styles'
 import ChipContext from './ChipContext'
-import { useContext } from 'react'
 import ChipIcon from './ChipIcon'
 import ChipText from './ChipText'
 
@@ -14,7 +13,8 @@ const Chip = ({
     active = false,
     disabled = false,
     iconReversed = false,
-    variant = 'filled'
+    variant = 'filled',
+    onPress,
 }: ChipProps & ChipTextProps & ChipIconProps) => {
     const { styles } = useStyles(styleSheet, {
         size,
@@ -25,8 +25,8 @@ const Chip = ({
 
     return (
         <ChipContext.Provider value={{ variant, size, active, disabled, label, textStyle: styles.text(variant), icon, iconStyle: styles.icon}}>
-            <Pressable style={({ pressed }) => [styles.container(variant), pressed && styles.pressed]} disabled={disabled}>
-                <View style={[styles.content, { flexDirection: iconReversed ? 'row-reverse' : 'row' },]}>
+            <Pressable testID='pressable-chip' style={({ pressed }) => [styles.container(variant), styles.pressed(pressed)]} disabled={disabled} onPress={onPress}>
+                <View style={[styles.content(iconReversed),]}>
                     <ChipIcon/>
                     <ChipText/>
                 </View>

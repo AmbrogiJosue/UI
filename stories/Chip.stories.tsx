@@ -76,11 +76,11 @@ export const Outline: Story = {
     args: {
         variant: 'outline'
     },
-    decorators: [
-        (Story) => (
-            <View style={{ flex: 1, alignItems: 'center', backgroundColor:'black', padding: 5 }}>
-                <Story />
-            </View>
-        )
-    ]
+    // decorators: [
+    //     (Story) => (
+    //         <View style={{ flex: 1, alignItems: 'center', backgroundColor:'black', padding: 5 }}>
+    //             <Story />
+    //         </View>
+    //     )
+    // ]
 }
